@@ -7,7 +7,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ItemSearch {
+public class AmazonHome {
 
     public static String driverPath= "browsers_driver/Windows/chromedriver.exe";
     public static WebDriver driver;
@@ -45,7 +45,7 @@ public class ItemSearch {
     @Test
     public static void buyingBook() throws InterruptedException {
         // //*[@id="search"]/div[1]/div[2]/div/span[3]/div[2]/div[3]/div/span/div/div/div[2]/h2/a/span
-        ItemSearch.booksLink();
+        AmazonHome.booksLink();
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[2]/div/span[3]/div[2]/div[3]/div/span/div/div/div[2]/h2/a/span")).click();
     }

@@ -53,13 +53,13 @@ public class CignaHome {
      public static void employersAndBrokers(){
         driver.findElement(By.cssSelector("#employers-brokers-level-one-link")).click();
     }
-    @Test
+
    public static void healthCareProvider(){
         driver.findElement(By.cssSelector("#health-care-providers-level-one-link")).click();
     }
 
 
-  //  @AfterMethod
+   @AfterMethod
     public void tearDown(){
         driver.quit();
     }
