@@ -32,6 +32,7 @@ public class TDBankHome {
         driver.findElement(By.cssSelector("a.td-button:nth-child(3)")).click();
     }
         // open a small business link
+
     public static void smallBusiness() throws InterruptedException {
 
         Thread.sleep(3000);
@@ -51,7 +52,7 @@ public class TDBankHome {
         driver.findElement(By.linkText("Investing & Wealth")).click();
     }
         // to close
-    @AfterMethod
+ //   @AfterMethod
     public static void tearDown(){
         driver.quit();
     }

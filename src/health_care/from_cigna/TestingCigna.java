@@ -25,7 +25,7 @@ public class TestingCigna extends  CignaHome{
     @Test
     public void readSearchResult() throws InterruptedException {
         CignaHome.readFirstSearchResult();
-        String expectedTitle = "Coronavirus (COVID-19) Information for Medicare and Medicaid | Cigna";
+        String expectedTitle = "Support for Families of Healthcare Workers Affected by COVID-19 | Cigna";
         String actualTile = driver.getTitle();
         Assert.assertEquals(actualTile,expectedTitle,"Test failed");
     }

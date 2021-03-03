@@ -1,13 +1,14 @@
 package from_amazon;
 
+import driver_info.HomePageSetUp;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
-public class AmazonHome {
+
+public class AmazonHome extends HomePageSetUp {
 
     public static String driverPath= "browsers_driver/Windows/chromedriver.exe";
     public static WebDriver driver;
@@ -54,7 +55,7 @@ public class AmazonHome {
         driver.findElement(By.cssSelector("#nav-cart-count")).click();
     }
         // to close opened browser
-       @AfterClass
+    @AfterClass
     public void tearDown(){
         driver.quit();
     }
