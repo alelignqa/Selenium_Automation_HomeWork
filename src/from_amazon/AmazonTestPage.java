@@ -34,7 +34,6 @@ public class AmazonTestPage extends AmazonHome {
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle,expectedTitle,"Test failed");
     }
-
     @Test
     public void verifySelectedBook() throws InterruptedException {
         AmazonHome.buyingBook();

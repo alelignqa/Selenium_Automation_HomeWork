@@ -42,20 +42,18 @@ public class AmazonHome {
         driver.findElement(By.id(searchBar)).sendKeys("sidney sheldon");
         driver.findElement(By.id(searchButton)).click();
     }
-    @Test
+        // buying book
     public static void buyingBook() throws InterruptedException {
-        // //*[@id="search"]/div[1]/div[2]/div/span[3]/div[2]/div[3]/div/span/div/div/div[2]/h2/a/span
+
         AmazonHome.booksLink();
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[2]/div/span[3]/div[2]/div[3]/div/span/div/div/div[2]/h2/a/span")).click();
     }
-
-     // Clicking on Amazon cart #nav-cart-count
+        // Clicking on Amazon cart #nav-cart-count
     public static void clickOnAmazonCart(){
         driver.findElement(By.cssSelector("#nav-cart-count")).click();
     }
-
-
+        // to close opened browser
        @AfterClass
     public void tearDown(){
         driver.quit();

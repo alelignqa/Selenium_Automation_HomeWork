@@ -18,49 +18,48 @@ public class CignaHome {
     public static String classAttribute = "search-results__keyword";
     public static String searchResult = "//*[@id=\"cignaTab\"]/div[2]/div[1]/div/a";
 
-    //li:nth-child(4) > form > div > div > span > button
-    // //*[@id="ssi-includes"]/div/header/div[2]/nav[1]/div/ul/li[4]/form/div/div/span/button
 
+        // Home page set up
     @BeforeMethod
-    public static void  setUp(){
-        System.setProperty(propertySet,driverPath);
+    public static void setUp() {
+        System.setProperty(propertySet, driverPath);
         driver = new ChromeDriver();
         driver.get(url);
         driver.manage().window().maximize();
     }
-
+        // search for covid in the search box
     public static void covidSearch() throws InterruptedException {
 
         driver.findElement(By.cssSelector(cssSearchBox)).sendKeys("covid");
         driver.findElement(By.xpath(searchButton)).click();
         Thread.sleep(5000);
     }
-
+        // open the result of the first covid search result
     public static void readFirstSearchResult() throws InterruptedException {
         CignaHome.covidSearch();
         driver.findElement(By.xpath(searchResult)).click();
         Thread.sleep(5000);
     }
-
-    public static void individualsAndFamilies(){
+        // click on individual and families link
+    public static void individualsAndFamilies() {
         driver.findElement(By.cssSelector("#individuals-families-level-one-link")).click();
     }
-
-    public static void madicar(){
+        // click on a medicar link
+    public static void medicare() {
         driver.findElement(By.cssSelector("#medicare-level-one-link")).click();
     }
-
-     public static void employersAndBrokers(){
+        // click on the employers and brokers link
+    public static void employersAndBrokers() {
         driver.findElement(By.cssSelector("#employers-brokers-level-one-link")).click();
     }
-
-   public static void healthCareProvider(){
+        // click on health care provider
+    public static void healthCareProvider() {
         driver.findElement(By.cssSelector("#health-care-providers-level-one-link")).click();
+
     }
 
-
-   @AfterMethod
-    public void tearDown(){
+    @AfterMethod
+    public void tearDown() {
         driver.quit();
     }
 

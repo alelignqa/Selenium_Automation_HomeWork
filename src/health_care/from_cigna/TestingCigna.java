@@ -39,7 +39,7 @@ public class TestingCigna extends  CignaHome{
 
     @Test
     public void verifyMedicarPage(){
-        CignaHome.madicar();
+        CignaHome.medicare();
         String expectedTitle = "Cigna Medicare Insurance | Cigna";
         String actualTile = driver.getTitle();
         Assert.assertEquals(actualTile,expectedTitle,"Test failed");
