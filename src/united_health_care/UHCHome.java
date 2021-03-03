@@ -1,5 +1,6 @@
 package united_health_care;
 
+import driver_info.HomePageSetUp;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -8,20 +9,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-public class UHCHome {
+public class UHCHome extends HomePageSetUp {
 
-    public static String driverPath = "browsers_driver/Windows/msedgedriver.exe";
-    public static WebDriver driver;
-    public static String browserDriver = "webdriver.edge.driver";
     public static String url = "https://www.uhc.com/";
-    public static String reUrl = "https://www.uhcprovider.com/";
+    public static String driverName = "edge";
 
-        // set upping United Health Care Home page
-    @BeforeMethod
-    public static void unitedHeathHomeSetUp() throws InterruptedException {
-        System.setProperty(browserDriver,driverPath);
-        driver = new EdgeDriver();
-        driver.get(url);
+    @BeforeMethod // set upping United Health Care Home page
+    public static void homePageSerUp() throws InterruptedException {
+        HomePageSetUp.driverSelection(driverName,url);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         Thread.sleep(5000);

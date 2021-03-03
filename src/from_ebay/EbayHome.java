@@ -45,12 +45,12 @@ public class EbayHome extends HomePageSetUp {
     public static void clickOnBrandOutlet(){
         driver.findElement(By.cssSelector("#gh-p-4 > a:nth-child(1)")).click();
     }
-    @Test    // To open an Electronic link from Ebay home page
+         // To open an Electronic link from Ebay home page
     public static void openElectronicsLink(){
         driver.findElement(By.cssSelector("li.hl-cat-nav__js-tab:nth-child(5) > a:nth-child(1)")).click();
     }
         // to close the opened browsers
- //   @AfterMethod
+    @AfterMethod
     public static void tearDown(){
         driver.quit();
     }

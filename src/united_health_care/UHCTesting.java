@@ -9,7 +9,7 @@ public class UHCTesting extends UHCHome{
 
     @Test
     public void verifyHomePage() throws InterruptedException {
-        UHCHome.unitedHeathHomeSetUp();
+        UHCHome.homePageSerUp();
         String expectedTitle = "Health insurance plans for individuals & families, employers, medicare | UnitedHealthcare";
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle,expectedTitle,"Test failed");
