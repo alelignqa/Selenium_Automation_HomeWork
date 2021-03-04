@@ -1,14 +1,11 @@
 package from_ebay;
 
-import driver_info.HomePageSetUp;
+import driver_info.DriverSelection;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
-public class EbayHome extends HomePageSetUp {
+public class EbayHome extends DriverSelection {
 
     public static String url = "https://www.ebay.com/";
     public static String driverName = "Fire Fox";

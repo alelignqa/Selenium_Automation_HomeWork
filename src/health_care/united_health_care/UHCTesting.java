@@ -1,4 +1,4 @@
-package united_health_care;
+package health_care.united_health_care;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -9,7 +9,7 @@ public class UHCTesting extends UHCHome{
 
     @Test
     public void verifyHomePage() throws InterruptedException {
-        UHCHome.homePageSerUp();
+        homePageSerUp();
         String expectedTitle = "Health insurance plans for individuals & families, employers, medicare | UnitedHealthcare";
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle,expectedTitle,"Test failed");
@@ -18,7 +18,7 @@ public class UHCTesting extends UHCHome{
     @Test
     public void verifyFindDoctors(){
         // Find a doctor | UnitedHealthcare
-        UHCHome.clickOnFindDoctorsButton();
+        clickOnFindDoctorsButton();
         String expectedTitle = "Find a doctor | UnitedHealthcare";
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle,expectedTitle,"Test failed");
@@ -28,7 +28,7 @@ public class UHCTesting extends UHCHome{
     @Test @Ignore
     public void verifySelectYourPlan() throws InterruptedException {
 
-        UHCHome.selectYourPlan();
+        selectYourPlan();
         String expectedTitle = "myuhc - Member Login | UnitedHealthcare";
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle,expectedTitle,"Test failed");
@@ -36,7 +36,7 @@ public class UHCTesting extends UHCHome{
 
     @Test
     public void verifyMedicareLink(){
-        UHCHome.clickOnMedicare();
+        clickOnMedicare();
         String expected = "Medicare";
         String actual = driver.findElement(By.cssSelector("#internalNavHeading")).getText();
         Assert.assertEquals(actual,expected,"Test failed");
@@ -44,7 +44,7 @@ public class UHCTesting extends UHCHome{
 
     @Test
     public void verifyEmployersLink(){
-        UHCHome.forEmployersLink();
+        forEmployersLink();
         String expected = "Health insurance for employers";
         String actual = driver.findElement(By.cssSelector("#employer-geo > div:nth-child(1)")).getText();
         Assert.assertEquals(actual,expected,"Test failed");
@@ -52,7 +52,7 @@ public class UHCTesting extends UHCHome{
 
     @Test
     public void verifyContactUsFromFooter(){
-        UHCHome.contactUsFromFooter();
+        contactUsFromFooter();
         String expected = "Contact us";
         String actual = driver.findElement(By.cssSelector("div > div.component.heading.content-w-background__heading > h1")).getText();
         Assert.assertEquals(actual,expected,"Test failed");
@@ -60,7 +60,7 @@ public class UHCTesting extends UHCHome{
 
      @Test
     public void verifyBrokersConsultantsLink(){
-        UHCHome.forBrokersAndConsultants();
+        forBrokersAndConsultants();
         String expected = "Health benefit strategies for brokers and consultants";
         String actual = driver.findElement(By.xpath("//*[@id=\"main-content\"]/div[1]/div/div[2]/h2")).getText();
         Assert.assertEquals(actual,expected,"Test failed");
@@ -68,7 +68,7 @@ public class UHCTesting extends UHCHome{
 
       @Test
     public void verifyIndividualFamilyPlanLingk(){
-        UHCHome.individualFamilyPlan();
+        individualFamilyPlan();
         String expected = "Health insurance for individuals & families";
         String actual = driver.findElement(By.cssSelector("#main-content > div:nth-child(1) > div > div:nth-child(1) > h1")).getText();
         Assert.assertEquals(actual,expected,"Test failed");

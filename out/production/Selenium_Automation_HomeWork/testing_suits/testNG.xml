@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Home Work Automation Test">
+<test name = "Multiple website trial Testing">
+    <classes>
+        <class name= "from_amazon.AmazonTestPage"/>
+        <class name= "from_ebay.EbayTestPage"/>
+        <class name= "from_TDBank.TestingTDBank"/>
+        <class name= "health_care.from_cigna.TestingCigna"/>
+        <class name= "health_care.united_health_care.UHCTesting"/>
+    </classes>
+</test> <!-- TestNG Test0 -->
+</suite> <!-- TestNG Forum -->

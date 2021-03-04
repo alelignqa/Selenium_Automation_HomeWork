@@ -1,20 +1,21 @@
 package from_amazon;
 
-import driver_info.HomePageSetUp;
+import driver_info.DriverSelection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 
-public class AmazonHome extends HomePageSetUp {
+public class AmazonHome extends DriverSelection {
 
-    public static String driverPath= "browsers_driver/Windows/chromedriver.exe";
+    public static String driverPath = "browsers_driver/Windows/chromedriver.exe";
     public static WebDriver driver;
-    public static String  url = "https://www.amazon.com/";
-    public static String  propertyKey = "webdriver.chrome.driver";
-    public static String  searchBar = "twotabsearchtextbox";
+    public static String url = "https://www.amazon.com/";
+    public static String propertyKey = "webdriver.chrome.driver";
+    public static String searchBar = "twotabsearchtextbox";
     public static String searchButton = "nav-search-submit-button"; // nav-search-submit-button
     public static String bookSerch = "//*[@id=\"nav-xshop\"]/a[6]";
     public static String verifyItem = "//*[@id=\"search\"]/span/div/span/h1/div/div[1]/div/div/span[3]";
@@ -55,7 +56,7 @@ public class AmazonHome extends HomePageSetUp {
         driver.findElement(By.cssSelector("#nav-cart-count")).click();
     }
         // to close opened browser
-    @AfterClass
+    @AfterMethod
     public void tearDown(){
         driver.quit();
     }

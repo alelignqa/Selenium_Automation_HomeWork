@@ -52,7 +52,7 @@ public class TDBankHome {
         driver.findElement(By.linkText("Investing & Wealth")).click();
     }
         // to close
- //   @AfterMethod
+    @AfterMethod
     public static void tearDown(){
         driver.quit();
     }

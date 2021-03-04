@@ -1,22 +1,19 @@
-package united_health_care;
+package health_care.united_health_care;
 
-import driver_info.HomePageSetUp;
+import driver_info.DriverSelection;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Ignore;
-import org.testng.annotations.Test;
 
-public class UHCHome extends HomePageSetUp {
+public class UHCHome extends DriverSelection {
 
     public static String url = "https://www.uhc.com/";
     public static String driverName = "edge";
 
     @BeforeMethod // set upping United Health Care Home page
     public static void homePageSerUp() throws InterruptedException {
-        HomePageSetUp.driverSelection(driverName,url);
+        DriverSelection.driverSelection(driverName,url);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         Thread.sleep(5000);
