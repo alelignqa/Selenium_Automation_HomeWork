@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 public class WalmartPageTest extends WalmartPage{
 
     @Test
@@ -24,13 +26,34 @@ public class WalmartPageTest extends WalmartPage{
         Assert.assertEquals(actualTitleFound,expectedSearchedTitle,"Test failed");
     }
 
- @Test()
-    public void verify() throws InterruptedException {
+    @Test()
+    public void verifyFilterSelection() throws InterruptedException {
         WalmartPage.applyingFilterOnSearchResult();
-        String expectedSearchedTitle = "Multicolor";
-        String actualTitleFound = driver.findElement(By.xpath("//*[@id=\"SearchContainer\"]/div/div[4]/div[1]/div[1]/div[2]/div/div[2]/button")).getText();
+        String expectedSearchedTitle = "Gift eligible";
+        String actualTitleFound = driver.findElement(By.cssSelector("div:nth-child(2) > div > div.content > button")).getText();
         Assert.assertEquals(actualTitleFound,expectedSearchedTitle,"Test failed");
     }
+
+    @Test()
+    public void verifyAddingItemToCart() throws InterruptedException {
+        WalmartPage.doAddItemToCart();
+        String expectedSearchedTitle = " You just added 1 item";
+        String actualTitleFound = driver.findElement(By.cssSelector("#pac-main-heading > div.Grid-col.u-size-6-12-m.heading-title.u-size-12-s > span:nth-child(1) > span")).getText();
+         System.out.println(actualTitleFound);
+        Assert.assertEquals(actualTitleFound,expectedSearchedTitle,"Test failed");
+    }
+
+@Test()  // this test keep failing it seems the expected is not considered as text
+    public void verifyItemRemovedFromCart() throws InterruptedException {
+        WalmartPage.removeItemFromCart();
+        String expectedSearchedTitle = "Cart contains 0 items";
+    //    String actualTitleFound = driver.findElement(By.id("hf-cart")).getText();
+        String actualTitleFound = driver.findElement(By.cssSelector("#hf-cart > span > span > span.b_a.hf-bubble-button-icon-slide.b_g.b_b.b_p > img")).getText();
+         System.out.println(actualTitleFound);
+        Assert.assertEquals(actualTitleFound,expectedSearchedTitle,"Test failed");
+    }
+
+
 
 
 }

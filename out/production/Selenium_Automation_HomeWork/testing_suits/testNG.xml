@@ -9,5 +9,5 @@
         <class name= "health_care.from_cigna.TestingCigna"/>
         <class name= "health_care.united_health_care.UHCTesting"/>
     </classes>
-</test> <!-- TestNG Test0 -->
-</suite> <!-- TestNG Forum -->
+</test>
+</suite>

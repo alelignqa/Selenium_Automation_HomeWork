@@ -27,6 +27,6 @@ public class DriverSelection {
             driver = new InternetExplorerDriver();
             driver.get(url);
         } else
-            System.out.println("I don't have the browser you gave me");
+            System.out.println("I don't have the browser you entered me");
     }
 }
